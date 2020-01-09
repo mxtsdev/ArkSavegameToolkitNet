@@ -19,7 +19,7 @@ namespace ArkSavegameToolkitNet.Domain {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "15.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     public class MapResources {
@@ -61,102 +61,102 @@ namespace ArkSavegameToolkitNet.Domain {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_Aberration_P {
+        public static byte[] topo_map_Aberration_P {
             get {
                 object obj = ResourceManager.GetObject("topo_map_Aberration_P", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_CrystalIsles {
+        public static byte[] topo_map_CrystalIsles {
             get {
                 object obj = ResourceManager.GetObject("topo_map_CrystalIsles", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_Extinction {
+        public static byte[] topo_map_Extinction {
             get {
                 object obj = ResourceManager.GetObject("topo_map_Extinction", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_Ragnarok {
+        public static byte[] topo_map_Ragnarok {
             get {
                 object obj = ResourceManager.GetObject("topo_map_Ragnarok", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_ScorchedEarth_P {
+        public static byte[] topo_map_ScorchedEarth_P {
             get {
                 object obj = ResourceManager.GetObject("topo_map_ScorchedEarth_P", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_ShigoIslands {
+        public static byte[] topo_map_ShigoIslands {
             get {
                 object obj = ResourceManager.GetObject("topo_map_ShigoIslands", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_TheCenter {
+        public static byte[] topo_map_TheCenter {
             get {
                 object obj = ResourceManager.GetObject("topo_map_TheCenter", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_TheIsland {
+        public static byte[] topo_map_TheIsland {
             get {
                 object obj = ResourceManager.GetObject("topo_map_TheIsland", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_TheVolcano {
+        public static byte[] topo_map_TheVolcano {
             get {
                 object obj = ResourceManager.GetObject("topo_map_TheVolcano", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        ///   Looks up a localized resource of type System.Byte[].
         /// </summary>
-        public static System.Drawing.Bitmap topo_map_Valguero_P {
+        public static byte[] topo_map_Valguero_P {
             get {
                 object obj = ResourceManager.GetObject("topo_map_Valguero_P", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
+                return ((byte[])(obj));
             }
         }
     }

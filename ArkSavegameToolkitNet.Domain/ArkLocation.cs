@@ -3,6 +3,8 @@ using ArkSavegameToolkitNet.Structs;
 using ArkSavegameToolkitNet.Types;
 using System;
 using System.Collections.Generic;
+using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -34,51 +36,40 @@ namespace ArkSavegameToolkitNet.Domain
         // { "ShigoIslands", Tuple.Create(50.0f, 8128.0f, 50.0f, 8128.0f) },
         private static Dictionary<string, Tuple<int, int, float, float, float, float>> _topoMapCalcs;
 
+        private static Image LoadBitmapResource(byte[] data)
+        {
+            using var ms = new MemoryStream(data);
+            return Bitmap.FromStream(ms);
+        }
+
         static ArkLocation()
         {
-            System.Drawing.Bitmap island = null, center = null, scorched = null, ragnarok = null, aberration = null, extinction = null, crystal = null, shigo = null, volcano = null, valguero = null;
-            try
-            {
-                island = MapResources.topo_map_TheIsland;
-                center = MapResources.topo_map_TheCenter;
-                scorched = MapResources.topo_map_ScorchedEarth_P;
-                ragnarok = MapResources.topo_map_Ragnarok;
-                aberration = MapResources.topo_map_Aberration_P;
-                extinction = MapResources.topo_map_Extinction;
-                crystal = MapResources.topo_map_CrystalIsles;
-                shigo = MapResources.topo_map_ShigoIslands;
-                volcano = MapResources.topo_map_TheVolcano;
-                valguero = MapResources.topo_map_Valguero_P;
+            using var island = LoadBitmapResource(MapResources.topo_map_TheIsland) as Bitmap;
+            using var center = LoadBitmapResource(MapResources.topo_map_TheCenter) as Bitmap;
+            using var scorched = LoadBitmapResource(MapResources.topo_map_ScorchedEarth_P) as Bitmap;
+            using var ragnarok = LoadBitmapResource(MapResources.topo_map_Ragnarok) as Bitmap;
+            using var aberration = LoadBitmapResource(MapResources.topo_map_Aberration_P) as Bitmap;
+            using var extinction = LoadBitmapResource(MapResources.topo_map_Extinction) as Bitmap;
+            using var crystal = LoadBitmapResource(MapResources.topo_map_CrystalIsles) as Bitmap;
+            using var shigo = LoadBitmapResource(MapResources.topo_map_ShigoIslands) as Bitmap;
+            using var volcano = LoadBitmapResource(MapResources.topo_map_TheVolcano) as Bitmap;
+            using var valguero = LoadBitmapResource(MapResources.topo_map_Valguero_P) as Bitmap;
 
-                //painted-maps are divided into a 10x10 grid, lacking precise offsets and should instead align with the grid (0.0f, 0.0f, 100.0f, 100.0f)
-                //topo-maps offsets are calculated using two easily identifiable points on the map and reversing the formula for TopoMapX/TopoMapY val-2.95f, 0.0f, 86.3f, 89.0f
-                _topoMapCalcs = new Dictionary<string, Tuple<int, int, float, float, float, float>>
-                {
-                    { "TheIsland", Tuple.Create(island.Width, island.Height, 7.2f, 7.2f, 92.8f, 92.8f) },
-                    { "TheCenter", Tuple.Create(center.Width, center.Height, -2.5f, 1f, 104.5f, 101f) },
-                    { "ScorchedEarth_P", Tuple.Create(scorched.Width, scorched.Height, 7.2f, 7.2f, 92.8f, 92.8f) },
-                    { "Aberration_P", Tuple.Create(aberration.Width, aberration.Height, 0.0f, 0.0f, 100.0f, 100.0f) },
-                    { "Extinction", Tuple.Create(extinction.Width, extinction.Height, 0.0f, 0.0f, 100.0f, 100.0f) },
-                    { "Ragnarok", Tuple.Create(ragnarok.Width, ragnarok.Height, 0.0f, 0.0f, 100.0f, 100.0f) },
-                    { "CrystalIsles", Tuple.Create(crystal.Width, crystal.Height, -1.7f, -1.5f, 99.3f, 101.0f) },
-                    { "ShigoIslands", Tuple.Create(shigo.Width, shigo.Height, -2.0f, -1.6f, 99.8f, 101.0f) },
-                    { "TheVolcano", Tuple.Create(volcano.Width, volcano.Height, -1.95f, -1.3f, 99.5f, 100.7f) },
-                    { "Valguero_P", Tuple.Create(valguero.Width, valguero.Height, -10.0f, -10.0f, 110.0f, 110.0f) }
-                };
-            }
-            finally
+            //painted-maps are divided into a 10x10 grid, lacking precise offsets and should instead align with the grid (0.0f, 0.0f, 100.0f, 100.0f)
+            //topo-maps offsets are calculated using two easily identifiable points on the map and reversing the formula for TopoMapX/TopoMapY val-2.95f, 0.0f, 86.3f, 89.0f
+            _topoMapCalcs = new Dictionary<string, Tuple<int, int, float, float, float, float>>
             {
-                island?.Dispose();
-                center?.Dispose();
-                scorched?.Dispose();
-                ragnarok?.Dispose();
-                aberration?.Dispose();
-                extinction?.Dispose();
-                crystal?.Dispose();
-                shigo?.Dispose();
-                volcano?.Dispose();
-                valguero?.Dispose();
-            }
+                { "TheIsland", Tuple.Create(island.Width, island.Height, 7.2f, 7.2f, 92.8f, 92.8f) },
+                { "TheCenter", Tuple.Create(center.Width, center.Height, -2.5f, 1f, 104.5f, 101f) },
+                { "ScorchedEarth_P", Tuple.Create(scorched.Width, scorched.Height, 7.2f, 7.2f, 92.8f, 92.8f) },
+                { "Aberration_P", Tuple.Create(aberration.Width, aberration.Height, 0.0f, 0.0f, 100.0f, 100.0f) },
+                { "Extinction", Tuple.Create(extinction.Width, extinction.Height, 0.0f, 0.0f, 100.0f, 100.0f) },
+                { "Ragnarok", Tuple.Create(ragnarok.Width, ragnarok.Height, 0.0f, 0.0f, 100.0f, 100.0f) },
+                { "CrystalIsles", Tuple.Create(crystal.Width, crystal.Height, -1.7f, -1.5f, 99.3f, 101.0f) },
+                { "ShigoIslands", Tuple.Create(shigo.Width, shigo.Height, -2.0f, -1.6f, 99.8f, 101.0f) },
+                { "TheVolcano", Tuple.Create(volcano.Width, volcano.Height, -1.95f, -1.3f, 99.5f, 100.7f) },
+                { "Valguero_P", Tuple.Create(valguero.Width, valguero.Height, -10.0f, -10.0f, 110.0f, 110.0f) }
+            };
         }
 
         public ArkLocation() { }
